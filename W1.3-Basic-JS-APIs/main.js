@@ -134,3 +134,70 @@ console.log(typeof(age1));
 */
 
 // Array Functions
+let arr = [6,7,12,20,30];
+/*
+// push() , pop() , shift() , unshift()
+console.log(arr);
+arr.push(50);
+console.log(arr);
+arr.pop();
+console.log(arr);
+arr.pop(12);
+console.log(arr);
+arr.shift();
+console.log(arr);
+arr.unshift(5);
+console.log(arr);
+*/
+/*
+// concat()
+let arr1 = ["skg","ssk","akg","sm","tr"];
+let arr2 = arr.concat(arr1);
+console.log(arr);
+console.log(arr1);
+console.log(arr2);
+*/
+/*
+// forEach()
+function logThing(str){
+    console.log(str);
+}
+function square(str){
+    console.log(str*str);
+}
+// arr.forEach(logThing);
+arr.forEach(square);
+*/
+
+// Classes
+class Animal {
+    constructor(name,legCount,speak,color){
+        this.name = name
+        this.legCount = legCount
+        this.speak = speak
+        this.color = color
+    }
+    static myType(){
+        console.log('Animal');
+    }
+    speaks(){
+        console.log(this.speak);
+    }
+    legs(){
+        console.log(this.legCount);
+    }
+    colorOf(){
+        console.log(this.color);
+    }
+}
+let dog = new Animal("tommy",4,"bhow bhows","brown");
+// console.log(dog);
+// dog.speaks();
+let cat = new Animal("pumpkin",4,"meow meows","black");
+// console.log(cat);
+// console.log(typeof(cat));
+
+// cat.speaks();
+// cat.colorOf();
+// cat.legs();
+Animal.myType();
