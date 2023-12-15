@@ -170,6 +170,7 @@ arr.forEach(square);
 */
 
 // Classes
+/*
 class Animal {
     constructor(name,legCount,speak,color){
         this.name = name
@@ -201,3 +202,91 @@ let cat = new Animal("pumpkin",4,"meow meows","black");
 // cat.colorOf();
 // cat.legs();
 Animal.myType();
+*/
+
+// Date Class
+const currentDate = new Date();
+/*
+console.log(currentDate.getDate());
+console.log(currentDate.getMonth()+1);
+console.log(currentDate.getFullYear());
+
+console.log(currentDate.getHours());
+console.log(currentDate.getMinutes());
+console.log(currentDate.getSeconds());
+
+// console.log(currentDate.getTime());
+
+// biggest usecase of Date Class --> how long a process of function takes to run.
+function sumOf(n){
+    let sum = 0;
+    for(let i=1;i<=n;i++){
+        sum += i;
+    }
+    return sum;
+}
+
+const beforeDate = new Date();
+const beforeTime = beforeDate.getTime();
+console.log(sumOf(1000000000));
+const afterDate = new Date();
+const afterTime = afterDate.getTime();
+const timeTaken = afterTime - beforeTime;
+console.log(timeTaken/1000);
+
+console.log(currentDate.getDay());
+
+console.log(currentDate);
+currentDate.setFullYear(2022);
+console.log(currentDate);
+*/
+
+// JSON Class
+/*
+const user = `{"name":"shubham","age":22,"gender":"male","ocupation":"programmer"}`;
+// console.log(user["name"]);
+// console.log(user);
+const userObject = JSON.parse(user);
+// console.log(userObject["name"]);
+// console.log(userObject);
+const newUser = {name:"abhi",age:28,gender:"male",occupation:"fin consultant"};
+console.log(newUser);
+console.log(typeof(newUser));
+const newUserStr = JSON.stringify(newUser);
+console.log(newUserStr);
+console.log(typeof(newUserStr));
+*/
+
+// Math Class
+/*
+let height = 160.82;
+const height1 = Math.floor(height);
+console.log(height,"after applying floor : ",height1);
+
+height = 160.22;
+const height2 = Math.ceil(height);
+console.log(height,"after applying ceil : ",height2);
+
+console.log(Math.max(10,20,30,40));
+console.log(Math.min(10,20,30,40));
+console.log(Math.floor(Math.random()*10));
+
+console.log(Math.pow(10,3));
+console.log(Math.sqrt(121));
+*/
+
+// Object Class
+const user = {name:"abhi",age:28,gender:"male",occupation:"fin consultant"};
+// console.log(Object.keys(user));
+// console.log(Object.values(user));
+// console.log(Object.entries(user));
+
+// let hasProp = user.hasOwnProperty("name");
+// console.log(hasProp);
+// hasProp = user.hasOwnProperty("game");
+// console.log(hasProp);
+
+// important --> Object.assign()
+const newUser = Object.assign({},user,{city:"Kolkata"});
+console.log(newUser.hasOwnProperty("city"));
+console.log(newUser["city"]);
