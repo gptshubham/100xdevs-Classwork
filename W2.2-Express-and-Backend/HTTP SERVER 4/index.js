@@ -3,9 +3,8 @@ const app = express()
 const port = 3002
 const bodyParser = require("body-parser")
 
-
-app.use(bodyParser.json())
 // app.use(express.json())
+app.use(bodyParser.json())
 app.post('/conversations',function(req,res){
     // console.log(req.headers["authorization"])
     console.log(req.body)
