@@ -70,3 +70,40 @@ app.get("/health-checkup",(req,res)=>{
 app.listen(3000);
 */
 // Best Way - Middlewares
+
+// Why we need Input Validation
+const express = require("express");
+const z = require("zod");
+const app = express();
+
+app.use(express.json());
+
+const kidneyInputValidationSchema = z.array(z.number());
+
+app.post("/health-checkup",(req,res)=>{
+    const kidneys = req.body.kidneys;
+    const kidneyInputValidationResponse = kidneyInputValidationSchema.safeParse(kidneys);
+    if(!kidneyInputValidationResponse.success){
+        res.status(411).json({
+            msg:"Invalid Input!"
+        })
+    }
+    else{
+        res.send({
+            kidneyInputValidationResponse
+        });
+    }
+    // const kidneysLength = kidneys.length;
+    // kidneys = [1,2]
+    // res.send(`Your kidney length is ${kidneysLength}`);
+})
+
+/*
+// global cache
+app.use((err, req, res, next)=>{
+    res.json({
+        msg: "Something went wrong. Please Try Again!"
+    })
+})
+*/
+app.listen(3000);
